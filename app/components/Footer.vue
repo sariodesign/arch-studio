@@ -3,6 +3,9 @@
 
 <template>
 	<footer>
+		<div class="footer-logo">
+			<img width="58" src="logo-footer.svg" alt="Footer logo" />
+		</div>
 		<nav class="footer-nav">
 			<NuxtLink to="/portfolio">Portfolio</NuxtLink>
 			<NuxtLink to="/about">About Us</NuxtLink>
@@ -19,10 +22,23 @@
 	footer {
 		background-color: var(--very-light-grey);
 		padding: 92px 0 48px;
-
+		position: relative;
 		.btn-link {
 			margin: 0 auto;
 		}
+	}
+
+	.footer-logo {
+		align-items: center;
+		background-color: var(--very-dark-blue);
+		display: flex;
+		height: 120px;
+		left: 50%;
+		justify-content: center;
+		position: absolute;
+		top: -60px;
+		transform: translateX(-50%);
+		width: 120px;
 	}
 	.footer-nav {
 		align-items: center;
