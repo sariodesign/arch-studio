@@ -3,15 +3,15 @@ import { ref } from 'vue';
 
 const featuredList = ref([
 	{
-		image: 'image-del-sol.jpg',
+		image: '/image-del-sol.jpg',
 		name: 'Project Del Sol'
 	},
 	{
-		image: 'image-228b.jpg',
+		image: '/image-228b.jpg',
 		name: '228B Tower'
 	},
 	{
-		image: 'image-prototype.jpg',
+		image: '/image-prototype.jpg',
 		name: 'Le Prototype'
 	}
 ])
@@ -34,7 +34,7 @@ const featuredList = ref([
 		</ul>
 		<NuxtLink class="btn-link" to="/portfolio">
 			<span>See All</span>
-			<img src="icon-arrow.svg" alt="arrow icon" />
+			<img src="/icon-arrow.svg" alt="arrow icon" />
 		</NuxtLink>
 	</section>
 </template>

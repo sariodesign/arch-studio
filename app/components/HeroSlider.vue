@@ -61,7 +61,7 @@ onMounted(() => {
 						<p class="hero-slide-description">{{ slide.description }}</p>
 						<NuxtLink class="btn-link" to="/portfolio">
 							<span>See Our Portfolio</span>
-							<img src="icon-arrow.svg" alt="arrow icon" />
+							<img src="/icon-arrow.svg" alt="arrow icon" />
 						</NuxtLink>
 					</div>
 				</li>

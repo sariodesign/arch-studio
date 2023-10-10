@@ -1,13 +1,13 @@
 <template>
 	<section class="about-block">
 		<figure class="about-block-figure">
-			<img src="image-small-team.jpg" alt="" />
+			<img src="/image-small-team.jpg" alt="" />
 		</figure>
 		<div class="about-block-content">
 			<h2 class="about-block-title">Small Team, big idea</h2>
 			<NuxtLink class="btn-link" to="/about">
 				<span>About us</span>
-				<img src="icon-arrow.svg" alt="arrow icon" />
+				<img src="/icon-arrow.svg" alt="arrow icon" />
 			</NuxtLink>
 		</div>
 	</section>

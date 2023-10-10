@@ -4,7 +4,7 @@
 <template>
 	<footer>
 		<div class="footer-logo">
-			<img width="58" src="logo-footer.svg" alt="Footer logo" />
+			<img width="58" src="/logo-footer.svg" alt="Footer logo" />
 		</div>
 		<nav class="footer-nav">
 			<NuxtLink to="/portfolio">Portfolio</NuxtLink>
@@ -13,7 +13,7 @@
 		</nav>
 		<NuxtLink class="btn-link" to="/portfolio">
 			<span>See Our Portfolio</span>
-			<img src="icon-arrow.svg" alt="arrow icon" />
+			<img src="/icon-arrow.svg" alt="arrow icon" />
 		</NuxtLink>
 	</footer>
 </template>

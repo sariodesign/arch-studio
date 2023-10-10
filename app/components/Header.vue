@@ -7,7 +7,7 @@ defineProps({
 <template>
 	<header :class="{ 'menu-opened': mobileMenuVisible }">
 		<NuxtLink to="/">
-			<img class="logo" src="logo.svg" alt="logo" />
+			<img class="logo" src="/logo.svg" alt="logo" />
 		</NuxtLink>
 		<nav>
 			<NuxtLink to="/portfolio">Portfolio</NuxtLink>
@@ -15,7 +15,7 @@ defineProps({
 			<NuxtLink to="/contact">Contact</NuxtLink>
 		</nav>
 		<button class="btn-menu" @click="mobileMenuVisible = !mobileMenuVisible">
-			<img src="icon-hamburger.svg" alt="menu icon" />
+			<img src="/icon-hamburger.svg" alt="menu icon" />
 		</button>
 	</header>
 </template>
