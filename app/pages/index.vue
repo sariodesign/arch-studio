@@ -1,3 +1,8 @@
 <template>
-	<main>Homepage</main>
+	<main>
+		<HeroSlider />
+		<Content />
+		<AboutBlock />
+		<Featured />
+	</main>
 </template>

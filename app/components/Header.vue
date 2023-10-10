@@ -20,7 +20,7 @@ defineProps({
 	</header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	header {
 		align-items: center;
 		display: flex;
@@ -34,6 +34,25 @@ defineProps({
 		@media screen and (min-width: 768px) {
 			margin-bottom: 56px;
 			justify-content: flex-start;
+		}
+
+		&:after {
+			background-color: #000000;
+			content: '';
+			height: calc(100vh - 96px);
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			top: 108px;
+			transition: opacity .25s ease-in-out;
+			width: 100%;
+			visibility: hidden;
+			z-index: 2;
+		}
+
+		&.menu-opened:after {
+			opacity: .5;
+			visibility: visible;
 		}
 	}
 
@@ -50,7 +69,7 @@ defineProps({
 	nav {
 		box-sizing: border-box;
 		display: flex;
-		column-gap: 60px;		
+		column-gap: 60px;
 
 		@media screen and (max-width: 767px) {
 			background-color: var(--very-light-grey);
@@ -59,10 +78,11 @@ defineProps({
 			padding: 40px 48px;
 			position: fixed;
 			row-gap: 16px;
-			top: 96px;
+			top: 108px;
 			transform: translate(calc(100% + 32px));
 			transition: all .25s linear;
 			width: calc(100% - 32px);
+			z-index: 3;
 		}
 
 		.menu-opened & {
