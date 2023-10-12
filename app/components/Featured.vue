@@ -5,24 +5,24 @@ const featuredList = ref([
 	{
 		image: '/image-del-sol.jpg',
 		responsive: {
-			desktop: '/image-del-sol.jpg',
-			tablet: './tablet/image-del-sol.jpg'
+			desktop: '/desktop/image-del-sol.jpg',
+			tablet: '/tablet/image-del-sol.jpg'
 		},
 		name: 'Project Del Sol'
 	},
 	{
 		image: '/image-228b.jpg',
 		responsive: {
-			desktop: '/image-228b.jpg',
-			tablet: './tablet/image-228b.jpg'
+			desktop: '/desktop/image-228b.jpg',
+			tablet: '/tablet/image-228b.jpg'
 		},
 		name: '228B Tower'
 	},
 	{
 		image: '/image-prototype.jpg',
 		responsive: {
-			desktop: '/image-prototype.jpg',
-			tablet: './tablet/image-prototype.jpg'
+			desktop: '/desktop/image-prototype.jpg',
+			tablet: '/tablet/image-prototype.jpg'
 		},
 		name: 'Le Prototype'
 	}
@@ -65,12 +65,14 @@ const featuredList = ref([
 		@media screen and (min-width: 768px) {
 			flex-direction: row;
 			flex-wrap: wrap;
+			margin-bottom: 200px;
 			padding: 0;
 			row-gap: 85px;
 		}
 
 		.btn-link {
 			align-self: center;
+			width: 100%;
 
 			@media screen and (min-width: 768px) {
 				margin-left: auto;
@@ -86,18 +88,29 @@ const featuredList = ref([
 		&:after {
 			content: counter(count);
 			color: var(--white);
+			display: none;
 			font-size: 250px;
 			font-weight: 700;
+			line-height: 200px;
 			opacity: .5;
 			position: absolute;
 			right: 16px;
 			top: 32px;
 			z-index: 1;
+
+			@media screen and (min-width: 768px) {
+				display: block;
+			}
+
+			@media screen and (min-width: 1024px) {
+				right: -16px;
+			}
 		}
 	}
 
 	.featured-content {
 		background-color: rgba(0,0,0,.35);
+		background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
 		box-sizing: border-box;
 		color: var(--white);
 		display: flex;
@@ -124,6 +137,10 @@ const featuredList = ref([
 			opacity: .75;
 			text-decoration: none;
 		}
+
+		@media screen and (min-width: 1024px) {
+			padding: 40px;
+		}
 	}
 
 	.featured-title {
@@ -141,10 +158,19 @@ const featuredList = ref([
 			flex: 1 0 100%;
 			order: 3;
 		}
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			column-gap: 30px;
+		}
 	}
 
 	.featured-image {
 		margin: 0 0 24px;
+
+		@media screen and (min-width: 1024px) {
+			margin: 0;
+		}
 
 		img {
 			vertical-align: bottom;

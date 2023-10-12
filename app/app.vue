@@ -39,6 +39,7 @@ main {
   @media screen and (min-width: 768px) {
 		margin: 0 auto;
 		max-width: 573px;
+    position: relative;
   }
 
   @media screen and (min-width: 1024px) {
@@ -64,6 +65,10 @@ ul {
   justify-content: center;
   text-decoration: none;
   width: 252px;
+
+  &:hover {
+    background-color: var(--dark-grey);
+  }
 }
 
 </style>

@@ -38,6 +38,11 @@
 				right: 0;
 			}
 		}
+
+		@media screen and (min-width: 1024px) {
+			margin: 0 auto;
+			width: 1110px
+		}
 	}
 
 	.footer-logo {
@@ -58,6 +63,11 @@
 			top: 0;
 			transform: translateX(0);
 		}
+
+		@media screen and (min-width: 1024px) {
+			height: 200px;
+			width: 200px
+		}
 	}
 	.footer-nav {
 		align-items: center;
@@ -74,6 +84,14 @@
 			height: 120px;
 			margin: 0;
 			padding: 0 140px 0 40px;
+		}
+
+		@media screen and (min-width: 1024px) {
+			box-sizing: border-box;
+			height: 200px;
+			justify-content: flex-start;
+			padding: 0 140px 0 85px;
+			width: 784px;
 		}
 
 		a {

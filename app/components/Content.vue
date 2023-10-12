@@ -11,8 +11,14 @@ const content = ref([
 
 <template>
 	<section>
-		<h1>{{ intro }}</h1>
-		<p v-for="(p, i) in content" :key="i">{{ p }}</p>
+		<span>Welcome</span>
+		<div>
+			<h1>{{ intro }}</h1>
+			<p v-for="(p, i) in content" :key="i">{{ p }}</p>
+		</div>
+		<figure>
+			<img src="/desktop/image-welcome.jpg" alt="Home welcome" />
+		</figure>
 	</section>
 </template>
 
@@ -25,7 +31,36 @@ const content = ref([
 			padding: 0;
 		}
 
+		@media screen and (min-width: 1024px) {
+			align-items: flex-end;
+			column-gap: 125px;
+			display: flex;
+			justify-content: flex-end;
+			position: relative;
+		}
 
+	}
+
+	span {
+		color: var(--very-light-grey);
+		content: 'Welcome';
+		display: none;
+		font-family: "Spartan Bold";
+		font-size: 120px;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 20px;
+
+		@media screen and (min-width: 768px) {
+			display: block;
+		}
+
+		@media screen and (min-width: 1024px) {
+			font-size: 200px;
+			left: 0;
+			position: absolute;
+			top: -100px;
+		}
 	}
 
 	h1 {
@@ -38,17 +73,15 @@ const content = ref([
 			font-weight: 700;
 			line-height: 64px;
 			width: 446px;
+		}
+	}
 
-			&:before {
-				font-family: "Spartan Bold";
-				color: var(--very-light-grey);
-				content: 'Welcome';
-				display: block;
-				font-size: 120px;
-				font-weight: 700;
-				line-height: 1;
-				margin-bottom: 20px;
-			}
+	div {
+		margin: 0 auto;
+
+		@media screen and (min-width: 1024px) {
+			margin: 0 0 0 auto;
+			width: 446px;
 		}
 	}
 
@@ -56,6 +89,23 @@ const content = ref([
 		color: var(--dark-grey);
 		font-size: 18px;
 		line-height: 24px;
-		margin: 0 0 22px;
+		margin: 0 0 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	figure {
+		display: none;
+		margin: 0;
+
+		@media screen and (min-width: 1024px) {
+			display: block;
+		}
+
+		img {
+			vertical-align: bottom;
+		}
 	}
 </style>

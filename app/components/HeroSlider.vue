@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+
 let slideCounter = ref(0);
+
+const controlsRef = ref([])
 
 const slides = ref([
 	{
@@ -45,21 +48,24 @@ const slides = ref([
 	}
 ])
 
-onMounted(() => {
-	
+function setAutoSlide() {
+	slides.value[slideCounter.value].current = false;
+  slideCounter.value = (slideCounter.value + 1) % slides.value.length;
+  slides.value[slideCounter.value].current = true;
+}
 
-	/* setInterval(() => {
-		if(slideCounter.value <= slides.value.length - 2) {
-			console.log('start interval')
-			slides.value[slideCounter.value].current = false;
-			slideCounter.value += 1;
-			slides.value[slideCounter.value].current = true;
-		} else {
-			slides.value[slideCounter.value].current = false;
-			slideCounter.value = 0
-			slides.value[slideCounter.value].current = true;
-		}
-	}, 3500) */
+function setCurrentSlide(idx){
+	slides.value.forEach(slide => slide.current = false);
+	slides.value[idx].current = true;
+	controlsRef.value.forEach(control => control.classList.remove('active'));
+	controlsRef.value[idx].classList.add('active');
+}
+
+onMounted(() => {
+	let mql = window.matchMedia("(max-width: 767px)");
+	if(mql.matches){
+		setInterval(setAutoSlide, 5000)
+	};
 })
 
 </script>
@@ -87,6 +93,9 @@ onMounted(() => {
 				</li>
 			</template>
 		</TransitionGroup>
+		<div class="hero-slider-controller">
+			<div class="hero-control" ref="controlsRef" :class="{active: index === 0}" @click="() => setCurrentSlide(index)" v-for="(slide, index) in slides" :key="slide.title">0{{ index + 1 }}</div>
+		</div>
 	</section>
 </template>
 
@@ -96,10 +105,16 @@ onMounted(() => {
 		overflow: hidden;
 		margin: 0 0 72px;
 		max-width: 100%;
+		position: relative;
 
 		@media screen and (min-width: 768px) {
 			height: 720px;
 			margin: 0 0 90px;
+		}
+
+		@media screen and (min-width: 1024px) {
+			margin-bottom: 195px;
+			overflow: visible;
 		}
 	}
 
@@ -108,6 +123,16 @@ onMounted(() => {
 		height: 100%;
 		margin: 0;
 		padding: 0;
+
+		&:after {
+			background-color: rgba(0,0,0,.35);
+			content: '';
+			left: 0;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
 	}
 
 	.hero-slide {
@@ -117,6 +142,17 @@ onMounted(() => {
 		height: 100%;
 		position: relative;
 		width: 100%;
+
+		&:before {
+			animation: loadingLine 5s linear;
+			background-color: var(--light-grey);
+			content: '';
+			height: 6px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			z-index: 3;
+		}
 	}
 
 	.hero-image {
@@ -131,7 +167,6 @@ onMounted(() => {
 	}
 
 	.hero-slide-content {
-		background-color: rgba(0,0,0,.35);
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -141,6 +176,14 @@ onMounted(() => {
 		max-width: 100%;
 		position: relative;
 		z-index: 1;
+
+		@media screen and (min-width: 768px) {
+			padding: 0 58px;
+		}
+
+		@media screen and (min-width: 1024px) {
+			padding: 0 190px;
+		}
 	}
 
 	.hero-slide-title {
@@ -151,6 +194,7 @@ onMounted(() => {
 		@media screen and (min-width: 768px) {
 			font-size: 96px;
 			line-height: 80px;
+			width: 544px;
 		}
 	}
 
@@ -161,22 +205,79 @@ onMounted(() => {
 
 		@media screen and (min-width: 768px) {
 			margin: 0 0 40px;
+			width: 445px;
+		}
+	}
+
+	.hero-slider-controller {
+		display: none;
+
+		@media screen and (min-width: 1024px) {
+			bottom: 0;
+			display: flex;
+			left: -80px;
+			position: absolute;
+			z-index: 1;
+		}
+	}
+
+	.hero-control {
+		align-items: center;
+		background-color: var(--white);
+		color: var(--medium-grey);
+		cursor: pointer;
+		display: flex;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1;
+		height: 80px;
+		justify-content: center;
+		width: 80px;
+
+		&:hover {
+			background-color: var(--very-light-grey);
+		}
+
+		&.active {
+			background-color: var(--very-dark-blue);
+			color: var(--white);
 		}
 	}
 
 	.slide-move,
 	.slide-enter-active,
-	.slide-leave-active {
+	.slide-enter-active .hero-slide-content,
+	.slide-leave-active,
+	.slide-leave-active .hero-slide-content {
 		transition: all .75s ease-in-out;
 	}
+
 	.slide-enter-from,
 	.slide-leave-to {
-		opacity: .25;
-		transform: scale(.85);
+		opacity: .3;
+	}
+
+	.slide-enter-from .hero-slide-content,
+	.slide-leave-to .hero-slide-content {
+		opacity: .3;
+		transform: scale(.95);
 		transform-origin: center;
 	}
 
 	.slide-leave-active {
   	position: absolute;
+	}
+
+	@keyframes loadingLine {
+		0% {
+			opacity: .75;
+			width: 0%;
+		}
+
+		100% {
+			opacity: 1;
+			width: 100%;
+		}
+		
 	}
 </style>
