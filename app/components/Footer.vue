@@ -23,8 +23,20 @@
 		background-color: var(--very-light-grey);
 		padding: 92px 0 48px;
 		position: relative;
+
+		@media screen and (min-width: 768px) {
+			align-items: center;
+			background-color: transparent;
+			display: flex;
+			padding: 0;
+		}
 		.btn-link {
 			margin: 0 auto;
+			
+			@media screen and (min-width: 768px) {
+				position: absolute;
+				right: 0;
+			}
 		}
 	}
 
@@ -39,6 +51,13 @@
 		top: -60px;
 		transform: translateX(-50%);
 		width: 120px;
+
+		@media screen and (min-width: 768px) {
+			left: 0;
+			position: relative;
+			top: 0;
+			transform: translateX(0);
+		}
 	}
 	.footer-nav {
 		align-items: center;
@@ -47,6 +66,15 @@
 		justify-content: center;
 		margin-bottom: 32px;
 		row-gap: 32px;
+
+		@media screen and (min-width: 768px) {
+			background-color: var(--very-light-grey);
+			column-gap: 60px;
+			flex-direction: row;
+			height: 120px;
+			margin: 0;
+			padding: 0 140px 0 40px;
+		}
 
 		a {
 			color: var(--medium-grey);

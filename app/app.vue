@@ -4,8 +4,16 @@
   </NuxtLayout>
 </template>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+@font-face {
+  font-family: "Spartan Bold";
+  font-weight: 700;
+  src:
+    local("Trickster"),
+    url("./spartan-bold.woff2") format("woff2");
+}
+
 
 :root {
   /* Colors */
@@ -24,6 +32,18 @@
 body {
   font-family: var(--base-font);
   margin: 0;
+}
+
+header,
+main {
+  @media screen and (min-width: 768px) {
+		margin: 0 auto;
+		max-width: 573px;
+  }
+
+  @media screen and (min-width: 1024px) {
+		max-width: 1110px;
+  }
 }
 
 ul {

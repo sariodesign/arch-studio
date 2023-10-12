@@ -33,6 +33,7 @@ defineProps({
 
 		@media screen and (min-width: 768px) {
 			margin-bottom: 56px;
+			padding: 0;
 			justify-content: flex-start;
 		}
 

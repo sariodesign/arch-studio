@@ -19,12 +19,37 @@ const content = ref([
 <style lang="scss" scoped>
 	section {
 		padding: 0 32px;
+		
+		@media screen and (min-width: 768px) {
+			margin-bottom: 200px;
+			padding: 0;
+		}
+
+
 	}
 
 	h1 {
 		font-size: 48px;
 		line-height: 52px;
 		margin: 0 0 22px;
+
+		@media screen and (min-width: 768px) {
+			font-size: 72px;
+			font-weight: 700;
+			line-height: 64px;
+			width: 446px;
+
+			&:before {
+				font-family: "Spartan Bold";
+				color: var(--very-light-grey);
+				content: 'Welcome';
+				display: block;
+				font-size: 120px;
+				font-weight: 700;
+				line-height: 1;
+				margin-bottom: 20px;
+			}
+		}
 	}
 
 	p {

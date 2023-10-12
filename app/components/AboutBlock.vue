@@ -19,6 +19,10 @@
 		height: 560px;
 		margin: 0 0 72px;
 		position: relative;
+
+		@media screen and (min-width: 768px) {
+			margin-bottom: 200px;
+		}
 	}
 
 	.about-block-title {

@@ -4,14 +4,26 @@ import { ref } from 'vue';
 const featuredList = ref([
 	{
 		image: '/image-del-sol.jpg',
+		responsive: {
+			desktop: '/image-del-sol.jpg',
+			tablet: './tablet/image-del-sol.jpg'
+		},
 		name: 'Project Del Sol'
 	},
 	{
 		image: '/image-228b.jpg',
+		responsive: {
+			desktop: '/image-228b.jpg',
+			tablet: './tablet/image-228b.jpg'
+		},
 		name: '228B Tower'
 	},
 	{
 		image: '/image-prototype.jpg',
+		responsive: {
+			desktop: '/image-prototype.jpg',
+			tablet: './tablet/image-prototype.jpg'
+		},
 		name: 'Le Prototype'
 	}
 ])
@@ -24,7 +36,11 @@ const featuredList = ref([
 		<ul class="featured-list">
 			<li class="featured-item" v-for="featured in featuredList" :key="featured.name">
 				<figure class="featured-image">
-					<img :src="featured.image" :alt="featured.name" />
+					<picture>
+						<source :srcset="featured.responsive.desktop" media="(min-width: 1024px)" />
+						<source :srcset="featured.responsive.tablet" media="(min-width: 768px)" />
+						<img :src="featured.image" :alt="featured.name" />
+					</picture>
 				</figure>
 				<div class="featured-content">
 					<h2>{{ featured.name }}</h2>
@@ -46,13 +62,38 @@ const featuredList = ref([
 		margin: 0 0 132px;
 		padding: 0 32px;
 
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 0;
+			row-gap: 85px;
+		}
+
 		.btn-link {
 			align-self: center;
+
+			@media screen and (min-width: 768px) {
+				margin-left: auto;
+				width: 169px;
+			}
 		}
 	}
 
 	.featured-item {
-		position: relative
+		counter-increment: count 1;
+		position: relative;
+
+		&:after {
+			content: counter(count);
+			color: var(--white);
+			font-size: 250px;
+			font-weight: 700;
+			opacity: .5;
+			position: absolute;
+			right: 16px;
+			top: 32px;
+			z-index: 1;
+		}
 	}
 
 	.featured-content {
@@ -82,6 +123,23 @@ const featuredList = ref([
 			line-height: 24px;
 			opacity: .75;
 			text-decoration: none;
+		}
+	}
+
+	.featured-title {
+		font-size: 48px;
+		line-height: 1;
+		margin: 0;
+
+		@media screen and (min-width: 768px) {
+			font-size: 72px
+		}
+	}
+
+	.featured-list {
+		@media screen and (min-width: 768px) {
+			flex: 1 0 100%;
+			order: 3;
 		}
 	}
 
