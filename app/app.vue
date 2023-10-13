@@ -32,6 +32,7 @@
 body {
   font-family: var(--base-font);
   margin: 0;
+  overflow: hidden;
 }
 
 header,
@@ -46,6 +47,13 @@ main {
 		max-width: 1110px;
   }
 }
+
+/* main {
+  @media screen and (max-width: 767px) {
+    overflow-y: scroll;
+    max-height: 100vh;
+  }
+} */
 
 figure {
   margin: 0;

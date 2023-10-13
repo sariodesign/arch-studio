@@ -24,7 +24,17 @@ const content = ref([
 
 <style lang="scss" scoped>
 	section {
+		margin-bottom: 112px;
 		padding: 0 32px;
+
+		@media screen and (max-width: 767px) {
+			&:before {
+				background-color: var(light-grey);
+				content: '';
+				height: 1px;
+				width: 65px;
+			}
+		}	
 		
 		@media screen and (min-width: 768px) {
 			margin-bottom: 200px;
@@ -67,6 +77,21 @@ const content = ref([
 		font-size: 48px;
 		line-height: 52px;
 		margin: 0 0 22px;
+
+		@media screen and (max-width: 767px) {
+			padding-top: 68px;
+
+			&:before {
+				background-color: var(--light-grey);
+				content: '';
+				display: block;
+				height: 1px;
+				left: 0;
+				position: relative;
+				top: -68px;
+				width: 65px;
+			}
+		}
 
 		@media screen and (min-width: 768px) {
 			font-size: 72px;

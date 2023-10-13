@@ -7,7 +7,7 @@
 		<BookMark :page-name="page" />
 		<HeroSlider />
 		<Content />
-		<AboutBlock />
+		<AboutBlockHome />
 		<Featured />
 	</main>
 </template>

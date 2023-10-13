@@ -1,3 +1,9 @@
+<script setup>
+	const page = "Contact"
+</script>
+
 <template>
-	<main>Contact</main>
+	<main>
+		<BookMark :page-name="page" />
+	</main>
 </template>
