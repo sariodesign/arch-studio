@@ -44,6 +44,10 @@
 		top: 0;
 		width: 100%;
 		z-index: 0;
+
+		img {
+			height: 100%;
+		}
 	}
 
 	.about-block-content {

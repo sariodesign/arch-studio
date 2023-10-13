@@ -47,6 +47,20 @@ main {
   }
 }
 
+figure {
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
 ul {
   list-style: none;
   margin: 0;

@@ -1,11 +1,22 @@
 <script setup>
+import { computed, ref } from 'vue';
 defineProps({
   mobileMenuVisible: Boolean,
 })
+
+const mobileMenuVisible = ref(false)
+
+const toggleMobileMenu = () => {
+  mobileMenuVisible.value = !mobileMenuVisible.value
+}
+
+const headerClass = computed(() => ({
+  'menu-opened': mobileMenuVisible.value,
+}))
 </script>
 
 <template>
-	<header :class="{ 'menu-opened': mobileMenuVisible }">
+	<header :class="headerClass">
 		<NuxtLink to="/">
 			<img class="logo" src="/logo.svg" alt="logo" />
 		</NuxtLink>
@@ -14,7 +25,7 @@ defineProps({
 			<NuxtLink to="/about">About</NuxtLink>
 			<NuxtLink to="/contact">Contact</NuxtLink>
 		</nav>
-		<button class="btn-menu" @click="mobileMenuVisible = !mobileMenuVisible">
+		<button class="btn-menu" @click="toggleMobileMenu">
 			<img src="/icon-hamburger.svg" alt="menu icon" />
 		</button>
 	</header>

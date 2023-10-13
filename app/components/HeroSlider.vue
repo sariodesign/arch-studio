@@ -64,7 +64,7 @@ function setCurrentSlide(idx){
 onMounted(() => {
 	let mql = window.matchMedia("(max-width: 767px)");
 	if(mql.matches){
-		setInterval(setAutoSlide, 5000)
+		//setInterval(setAutoSlide, 5000)
 	};
 })
 
@@ -144,7 +144,6 @@ onMounted(() => {
 		width: 100%;
 
 		&:before {
-			animation: loadingLine 5s linear;
 			background-color: var(--light-grey);
 			content: '';
 			height: 6px;
@@ -152,6 +151,10 @@ onMounted(() => {
 			position: absolute;
 			top: 0;
 			z-index: 3;
+
+			@media screen and (max-width: 767px) {
+				animation: loadingLine 5s linear;
+			}
 		}
 	}
 
@@ -164,6 +167,10 @@ onMounted(() => {
 		top: 0;
 		width: 100%;
 		z-index: 0;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	.hero-slide-content {
@@ -215,9 +222,13 @@ onMounted(() => {
 		@media screen and (min-width: 1024px) {
 			bottom: 0;
 			display: flex;
-			left: -80px;
+			left: 0;
 			position: absolute;
 			z-index: 1;
+		}
+
+		@media screen and (min-width: 1366px) {
+			left: -80px
 		}
 	}
 
