@@ -20,8 +20,37 @@ const content2 = ref({
 		'Speciliazing in Urban Design allowed us to focus on creating exceptional structures that live in harmony with their surroundings. We consider every detail from every surrounding element to inform our designs.',
 		'Our small team of world-class professionals provides input on every project.'
 	],
-	image: ''
+	image: '/desktop/image-heritage.jpg'
 })
+
+const members = ref([
+	{
+		name: "Jake Richards",
+		role: "Chief Architect",
+		photo: "/avatar-jake.jpg"
+	},
+	{
+		name: "Thompson Smith",
+		role: "Head of Finance",
+		photo: "/avatar-thompson.jpg"
+	},
+	{
+		name: "Jackson Rourke",
+		role: "Lead Designer",
+		photo: "/avatar-jackson.jpg"
+	},
+	{
+		name: "Maria Simpson",
+		role: "Senior Architect",
+		photo: "/avatar-maria.jpg"
+	}
+])
+
+const team = ref({
+	title: 'The Leaders',
+	members: members.value
+})
+
 </script>
 
 <template>
@@ -29,5 +58,6 @@ const content2 = ref({
 		<BookMark :page-name="page" />
 		<HeroContent :content="content" />
 		<AboutContent :content="content2" />
+		<TeamContent :team="team" />
 	</main>
 </template>

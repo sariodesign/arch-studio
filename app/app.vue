@@ -48,13 +48,6 @@ main {
   }
 }
 
-/* main {
-  @media screen and (max-width: 767px) {
-    overflow-y: scroll;
-    max-height: 100vh;
-  }
-} */
-
 figure {
   margin: 0;
 }
@@ -88,9 +81,14 @@ ul {
   text-decoration: none;
   width: 252px;
 
-  &:hover {
-    background-color: var(--dark-grey);
+  @media screen and (hover:hover) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--dark-grey);
+    }
   }
+
 }
 
 </style>

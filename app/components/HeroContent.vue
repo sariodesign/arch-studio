@@ -29,7 +29,11 @@ defineProps({
 <style lang="scss">
 	.hero-content {
 		margin-bottom: 76px;
-		position: relative
+		position: relative;
+
+		@media screen and (min-width: 768px) {
+			margin-bottom: 200px
+		}
 	}
 
 	.hero-content-image {

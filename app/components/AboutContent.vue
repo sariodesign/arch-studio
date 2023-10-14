@@ -27,8 +27,20 @@
 		margin-bottom: 112px;
 		padding: 0 32px;
 
+		@media screen and (min-width: 768px) {
+			padding: 0;
+		}
+
 		@media screen and (min-width: 1024px) {
 			display: flex;
+			column-gap: 124px;
+			margin-bottom: 200px;
+		}
+	}
+
+	.about-content {
+		@media screen and (min-width: 1024px) {
+			width: 446px
 		}
 	}
 
