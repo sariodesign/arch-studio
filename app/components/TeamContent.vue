@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue';
 
 defineProps({
 	team: {
@@ -17,6 +16,14 @@ defineProps({
 			<div class="team-person" v-for="person in team.members" :key="person.name">
 				<figure class="team-photo">
 					<img :src="person.photo" :alt="person.name">
+					<figcaption class="team-photo-overlay">
+						<a :href="person.linkedin" >
+							<img src="/icon-linkedin.svg" alt="Linkedin logo" />
+						</a>
+						<a :href="person.twitter" >
+							<img src="/icon-twitter.svg" alt="Twitter logo" />
+						</a>
+					</figcaption>
 				</figure>
 				<h3 class="team-name">{{ person.name }}</h3>
 				<span class="team-role">{{ person.role }}</span>
@@ -81,6 +88,34 @@ defineProps({
 	}
 	.team-photo {
 		margin-bottom: 15px;
+		position: relative;
+
+		@media screen and (hover:hover) {
+			cursor: pointer;
+
+			&:hover {
+				.team-photo-overlay {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		} 
+	}
+
+	.team-photo-overlay {
+		align-items: center;
+		background-color: rgba(0,0,0,.35);
+		column-gap: 32px;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		transition: all .25s ease-in-out;
+		visibility: hidden;
+		width: 100%
 	}
 
 	.team-name {

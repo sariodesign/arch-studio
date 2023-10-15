@@ -27,22 +27,30 @@ const members = ref([
 	{
 		name: "Jake Richards",
 		role: "Chief Architect",
-		photo: "/avatar-jake.jpg"
+		photo: "/avatar-jake.jpg",
+		linkedin: "#",
+		twitter: "#"
 	},
 	{
 		name: "Thompson Smith",
 		role: "Head of Finance",
-		photo: "/avatar-thompson.jpg"
+		photo: "/avatar-thompson.jpg",
+		linkedin: "#",
+		twitter: "#"
 	},
 	{
 		name: "Jackson Rourke",
 		role: "Lead Designer",
-		photo: "/avatar-jackson.jpg"
+		photo: "/avatar-jackson.jpg",
+		linkedin: "#",
+		twitter: "#"
 	},
 	{
 		name: "Maria Simpson",
 		role: "Senior Architect",
-		photo: "/avatar-maria.jpg"
+		photo: "/avatar-maria.jpg",
+		linkedin: "#",
+		twitter: "#"
 	}
 ])
 
