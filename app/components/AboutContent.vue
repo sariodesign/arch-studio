@@ -81,6 +81,14 @@
 				top: -49px;
 			}
 		}
+
+		@media screen and (min-width: 1024px) {
+			padding-top: 80px;
+
+			&:before {
+				top: -80px;
+			}
+		}
 	}
 
 	p {

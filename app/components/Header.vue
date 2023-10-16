@@ -52,7 +52,7 @@ const headerClass = computed(() => ({
 		//position: relative;
 		position: sticky;
 		top: 0;
-		z-index: 4;
+		z-index: 1001;
 
 		@media screen and (min-width: 768px) {
 			padding: 56px 0;

@@ -4,14 +4,18 @@ defineProps({
 		title: String,
 		content: String,
 		image: String,
-		responsive: Object
+		responsive: Object,
+		extraClass: {
+			type: String,
+			required: false
+		}
 	}
 
 })
 </script>
 
 <template>
-	<section class="hero-content">
+	<section class="hero-content" :class="content.extraClass">
 		<figure class="hero-content-image"> 
 			<picture>
 				<source :srcset="content.responsive.desktop" media="(min-width: 1024px)" />
@@ -112,10 +116,15 @@ defineProps({
 				font-size: 120px;
 				font-weight: bold;
 				left: auto;
+				letter-spacing: -5px;
 				line-height: 1;
 				right: 57px;
 				top: -57px;
 				width: auto;
+
+				.contact & {
+					content: 'Contact';
+				}
 			}
 
 			@media screen and (min-width: 1024px) {
@@ -123,6 +132,10 @@ defineProps({
 				left: -8px;
 				right: auto;
 				top: -112px;
+
+				.contact & {
+					left: -146px;
+				}
 			}
 		}
 	}

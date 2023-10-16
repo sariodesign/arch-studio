@@ -6,5 +6,9 @@ export default defineNuxtConfig({
       path: '~/components',
       extensions: ['.vue'],
     }
+  ],
+  modules: [
+    '@formkit/nuxt',
+    'nuxt3-leaflet'
   ]
 })

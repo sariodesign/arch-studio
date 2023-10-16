@@ -10,12 +10,18 @@ dependencies:
     version: 10.0.1
 
 devDependencies:
+  '@formkit/nuxt':
+    specifier: ^1.2.2
+    version: 1.2.2(vite@4.4.11)
   '@nuxt/devtools':
     specifier: 1.0.0-beta.0
     version: 1.0.0-beta.0(nuxt@3.7.4)(vite@4.4.11)
   nuxt:
     specifier: ^3.7.4
     version: 3.7.4(sass@1.69.2)
+  nuxt3-leaflet:
+    specifier: ^1.0.12
+    version: 1.0.12
   sass:
     specifier: ^1.69.2
     version: 1.69.2
@@ -782,6 +788,119 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
+  /@formkit/core@1.2.2:
+    resolution: {integrity: sha512-aJoZW7ZWXdwVBdw2acv62aPaecZ44PnK9eyp/hdMrMxT9xW3I84MytCdII8DYpxLmloaE+NoUANZIvlkTRGlHg==}
+    dependencies:
+      '@formkit/utils': 1.2.2
+    dev: true
+
+  /@formkit/dev@1.2.2:
+    resolution: {integrity: sha512-C3KzolVAQE732W2aCKgLDXyhnxCNFtWQEPvs677ZAEciMBrZEgU6ZDleb8XTX7FIF4m4PWszfheQIbdy4p0K+Q==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/utils': 1.2.2
+    dev: true
+
+  /@formkit/i18n@1.2.2:
+    resolution: {integrity: sha512-HABPlja6xQk0JztvQnbnhVzFqhgM6XqlqOzGNOtCOcOpMUSY3okT7NSMPTK/Zq4Yq4XQmbJgi/toGfYakqLfhA==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/utils': 1.2.2
+      '@formkit/validation': 1.2.2
+    dev: true
+
+  /@formkit/inputs@1.2.2:
+    resolution: {integrity: sha512-apVGQ+9eHRD8qi9h0LRvaI9UrumDUwXQSw3gMQfDvfCjkqZXY4+m/WS3FraqHH4Mqs7cjryYRYrHYpAaVQtqKQ==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/utils': 1.2.2
+    dev: true
+
+  /@formkit/nuxt@1.2.2(vite@4.4.11):
+    resolution: {integrity: sha512-qrYex9vhpnpMP32T1E9ZbcRPZIRzGeY0f8bgMUaY3v8DKcEN9okSDYKu8poGUqB5W6wjxgaXvXwhbaDb/Njspw==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/i18n': 1.2.2
+      '@formkit/vue': 1.2.2
+      '@nuxt/kit': 3.7.4
+      chokidar: 3.5.3
+      nuxi: 3.9.0
+      pathe: 1.1.1
+      unplugin-formkit: 0.2.7(vite@4.4.11)
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - tailwindcss
+      - unocss
+      - vite
+      - webpack
+      - windicss
+    dev: true
+
+  /@formkit/observer@1.2.2:
+    resolution: {integrity: sha512-D9bVRfs2FEuzuIdC2BFSpayV4xyIexbRc2JTLkdwgsx9rROz9bh67M+VZ7zmrONuikgrD+dfaopIXK5sRZPGSQ==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/utils': 1.2.2
+    dev: true
+
+  /@formkit/rules@1.2.2:
+    resolution: {integrity: sha512-WfDZfDDuX9lAyvCvxLwTeszQNd59Ztnyxx6zjRvzF6zHMD4g5swb3Jv6jy0Jwic0nl4+04IEhpBM4Cl5kQuAvA==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/utils': 1.2.2
+      '@formkit/validation': 1.2.2
+    dev: true
+
+  /@formkit/themes@1.2.2:
+    resolution: {integrity: sha512-YxNmReXkvuF9OP6wAHVyJvTZ+hd+zRfOyTjie75fQ1EkWCjcn2jk+DCY4U+IkgOnq6A/vcKjP5vyuQqsglUgAA==}
+    peerDependencies:
+      tailwindcss: ^3.2.0
+      unocss: ^0.31.0
+      windicss: ^3.0.0
+    peerDependenciesMeta:
+      tailwindcss:
+        optional: true
+      unocss:
+        optional: true
+      windicss:
+        optional: true
+    dependencies:
+      '@formkit/core': 1.2.2
+    dev: true
+
+  /@formkit/utils@1.2.2:
+    resolution: {integrity: sha512-4EGm4nfZGSJik0QRAEybxO52F3QhbOfX/KgtWfB3/dDUEOCx5RWDxIs/CU2yI4bceDl2aK8l/yDYwCYK9SO5MA==}
+    dev: true
+
+  /@formkit/validation@1.2.2:
+    resolution: {integrity: sha512-jUfEjh3HAWlPmcuI+c7ullWKbm3oIRlQvbqN1r2GDqMWWLZ47+k6PVELV/eU7gxrF0mpQcQY5r8zvA1IFocCGA==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/observer': 1.2.2
+      '@formkit/utils': 1.2.2
+    dev: true
+
+  /@formkit/vue@1.2.2:
+    resolution: {integrity: sha512-UH7CrEfsj1otO+EMgLYFWsLp1A8s3GYiRik3YPII6sVuImXYuLCtz++oT3JrnM5hmUJWmEjxZoi5gRYJzxa0ow==}
+    dependencies:
+      '@formkit/core': 1.2.2
+      '@formkit/dev': 1.2.2
+      '@formkit/i18n': 1.2.2
+      '@formkit/inputs': 1.2.2
+      '@formkit/observer': 1.2.2
+      '@formkit/rules': 1.2.2
+      '@formkit/themes': 1.2.2
+      '@formkit/utils': 1.2.2
+      '@formkit/validation': 1.2.2
+      vue: 3.3.4
+    transitivePeerDependencies:
+      - tailwindcss
+      - unocss
+      - windicss
+    dev: true
+
   /@ioredis/commands@1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
     dev: true
@@ -1291,6 +1410,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -1558,10 +1678,20 @@ packages:
     resolution: {integrity: sha512-VeiPZ9MMwXjO32/Xu7+OwflfmeoRwkE/qzndw42gGtgJwZopBnzy2gD//NN1+go1mADzkDcqf/KnFRSjTJ8xJA==}
     dev: true
 
+  /@types/geojson@7946.0.11:
+    resolution: {integrity: sha512-L7A0AINMXQpVwxHJ4jxD6/XjZ4NDufaRlUJHjNIFKYUFBH1SvOW+neaqb0VTRSLW5suSrSu19ObFEFnfNcr+qg==}
+    dev: true
+
   /@types/http-proxy@1.17.12:
     resolution: {integrity: sha512-kQtujO08dVtQ2wXAuSFfk9ASy3sug4+ogFR8Kd8UgP8PEuc1/G/8yjYRmp//PcDNJEUKOza/MrQu15bouEUCiw==}
     dependencies:
       '@types/node': 20.8.4
+    dev: true
+
+  /@types/leaflet@1.9.6:
+    resolution: {integrity: sha512-HakGTK5LBBWegNWsAmTlG55zN1zszYec7aG47/z6SzT90bW2vqjmbqk3YKAbrtveO+G7fSTKTYqVbIwAFnTrbg==}
+    dependencies:
+      '@types/geojson': 7946.0.11
     dev: true
 
   /@types/node@20.8.4:
@@ -1658,6 +1788,20 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.4.11(sass@1.69.2)
+      vue: 3.3.4
+    dev: true
+
+  /@vue-leaflet/vue-leaflet@0.10.1(@types/leaflet@1.9.6)(leaflet@1.9.4):
+    resolution: {integrity: sha512-RNEDk8TbnwrJl8ujdbKgZRFygLCxd0aBcWLQ05q/pGv4+d0jamE3KXQgQBqGAteE1mbQsk3xoNcqqUgaIGfWVg==}
+    peerDependencies:
+      '@types/leaflet': ^1.5.7
+      leaflet: ^1.6.0
+    peerDependenciesMeta:
+      '@types/leaflet':
+        optional: true
+    dependencies:
+      '@types/leaflet': 1.9.6
+      leaflet: 1.9.4
       vue: 3.3.4
     dev: true
 
@@ -3565,6 +3709,10 @@ packages:
       readable-stream: 2.3.8
     dev: true
 
+  /leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+    dev: true
+
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
     engines: {node: '>=10'}
@@ -3933,6 +4081,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
@@ -4223,6 +4375,18 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
+
+  /nuxt3-leaflet@1.0.12:
+    resolution: {integrity: sha512-nxG5rqosoX6p+xs/IqB0tGyawcte6FGWUUI/H2ZSVrGCQ7oN6GIj8DvQEb16sFXRlJeUDQfP0v4nLBCcqF58NQ==}
+    dependencies:
+      '@nuxt/kit': 3.7.4
+      '@types/leaflet': 1.9.6
+      '@vue-leaflet/vue-leaflet': 0.10.1(@types/leaflet@1.9.6)(leaflet@1.9.4)
+      leaflet: 1.9.4
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /nuxt@3.7.4(sass@1.69.2):
@@ -5652,6 +5816,28 @@ packages:
   /universalify@2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
+    dev: true
+
+  /unplugin-formkit@0.2.7(vite@4.4.11):
+    resolution: {integrity: sha512-2Ea5CyEZ2rwjSpx6maweyzFUsV1M/6CiACXHkz4Jv2G32SI4jq58stU7ADWSqrIKgjJE0bllyUx25lpj6ry9gA==}
+    peerDependencies:
+      esbuild: '*'
+      rollup: ^3
+      vite: '>=3'
+      webpack: ^4 || ^5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      pathe: 1.1.1
+      unplugin: 1.5.0
+      vite: 4.4.11(sass@1.69.2)
     dev: true
 
   /unplugin-vue-router@0.7.0(vue-router@4.2.5)(vue@3.3.4):
