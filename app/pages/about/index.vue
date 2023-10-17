@@ -1,5 +1,15 @@
 <script setup>
 import { ref } from 'vue';
+
+useHead({
+	title: 'About',
+	meta: [
+		{ name: 'description', content: 'Arch Studio About' }
+	],
+	htmlAttrs: {
+		lang: 'en'
+	}
+})
 	
 const page = "About"
 

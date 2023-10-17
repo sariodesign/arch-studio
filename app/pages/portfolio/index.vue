@@ -1,6 +1,16 @@
 <script setup>
 import { ref } from 'vue';
 
+useHead({
+	title: 'Portfolio',
+	meta: [
+		{ name: 'description', content: 'Arch Studio Portfolio' }
+	],
+	htmlAttrs: {
+		lang: 'en'
+	}
+})
+
 const page = 'Portfolio'
 
 const portfolio = ref([
